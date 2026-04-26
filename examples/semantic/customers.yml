@@ -1,0 +1,15 @@
+name: customers
+table: customers
+primary_key: customer_id
+description: One row per customer.
+
+dimensions:
+  - name: country
+    type: categorical
+    description: ISO country code.
+
+metrics:
+  - name: customer_count
+    type: count_distinct
+    sql: customer_id
+    description: Distinct customers.

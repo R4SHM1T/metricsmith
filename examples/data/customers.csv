@@ -1,0 +1,6 @@
+customer_id,country,email,signup_date
+1,GB,ava@example.com,2025-11-02
+2,GB,ben@example.com,2025-12-10
+3,IE,cara@example.com,2026-01-05
+4,FR,dan@example.com,2026-02-20
+5,FR,elle@example.com,2026-03-01

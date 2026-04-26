@@ -1,0 +1,37 @@
+name: orders
+table: orders
+primary_key: order_id
+description: One row per customer order.
+
+joins:
+  - to: customers
+    type: many_to_one
+    sql: orders.customer_id = customers.customer_id
+
+dimensions:
+  - name: status
+    type: categorical
+    description: Lifecycle state of the order.
+  - name: order_date
+    sql: created_at
+    type: time
+    description: When the order was placed.
+
+metrics:
+  - name: order_count
+    type: count
+    description: Number of orders.
+  - name: total_revenue
+    type: sum
+    sql: amount
+    description: Gross order value.
+  - name: paid_revenue
+    type: sum
+    sql: amount
+    description: Order value from paid orders only.
+    filters:
+      - status = 'paid'
+  - name: avg_order_value
+    type: average
+    sql: amount
+    description: Mean order value.
