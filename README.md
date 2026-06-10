@@ -60,6 +60,11 @@ built a small one end to end. Parsing the YAML, walking the joins, generating
 the SQL with a real expression builder, and proving the output against a known
 dataset taught me far more than reading the Cube docs ever did.
 
+metricsmith governs the *output* of an analytics stack: one trusted definition
+per metric. Its companion project,
+[pactum](https://github.com/R4SHM1T/pactum), guards the *input*: data contracts
+that fail your CI build when an upstream table drifts. Contracts in, metrics out.
+
 ## Install
 
 Not on PyPI yet. Install from source:
